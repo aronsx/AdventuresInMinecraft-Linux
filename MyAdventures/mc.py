@@ -2,8 +2,8 @@ import mcpi.minecraft as minecraft
 import mcpi.block as block
 import mcpi.entity as entity
 import mcpi.entity as creature
-import time
-import os
+from mcpi.connection import RequestError
+
 
 class ConnectPlayer:
     def __init__(self, minecraft_obj, nick):
