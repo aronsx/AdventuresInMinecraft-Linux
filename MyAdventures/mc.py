@@ -21,7 +21,7 @@ class ConnectPlayer:
         return self.mc.entity.getTilePos(self.player_id)
 
     def getPos(self):
-        return self.mc.entity.getTilePos(self.player_id)
+        return self.mc.entity.getPos(self.player_id)
 
     def getAccPos(self):
         return self.mc.entity.getPos(self.player_id)
@@ -55,23 +55,23 @@ class World:
     def events(self, *args):
         return self.mc.events(args)
 
-    def getBlock(self):
-        return self.mc.getBlock()
+    def getBlock(self, *args):
+        return self.mc.getBlock(args)
 
-    def getBlockWithData(self):
-        return self.mc.getBlockWithData()
+    def getBlockWithData(self, *args):
+        return self.mc.getBlockWithData(args)
 
-    def getBlocks(self):
-        return self.mc.getBlocks()
+    def getBlocks(self, *args):
+        return self.mc.getBlocks(args)
 
-    def getEntities(self):
-        return self.mc.getEntities()
+    def getEntities(self, *args):
+        return self.mc.getEntities(args)
 
-    def getEntityTypes(self):
-        return self.mc.getEntityTypes()
+    def getEntityTypes(self, *args):
+        return self.mc.getEntityTypes(args)
 
-    def getHeight(self):
-        return self.mc.getHeight()
+    def getHeight(self, *args):
+        return self.mc.getHeight(args)
 
     def postToChat(self, *args):
         return self.mc.postToChat(args)
@@ -115,6 +115,9 @@ class World:
 
         if length < 3 or width < 3 or height < 3:
             raise ValueError
+
+        if type(block_type) == 'mcpi.block.Block':
+            block_type = list(block_type)[0]
 
         x_start = x - width // 2
         y_start = y - 1
