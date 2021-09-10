@@ -39,6 +39,9 @@ Create a folder `AdventuresInMinecraft\Server`
 
 Create a folder `AdventuresInMinecraft\MyAdventures`
 
+### Install java
+
+sudo dnf install java-11-openjdk-headless
 
 ### Compile and run Bukkit
 
